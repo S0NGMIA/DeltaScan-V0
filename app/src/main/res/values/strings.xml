@@ -4,6 +4,14 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
+
+    <string name="home_fragment_label">Home Fragment</string>
+    <string name="paint_fragment_label">Paint Fragment</string>
+    <string name="scan_fragment_label">Scan Fragment</string>
+    <string name="settings_paint_fragment_label">Settings Paint Fragment</string>
+    <string name="settings_scan_fragment_label">Settings Scan Fragment</string>
+    <string name="barcode_analysis_fragment_label">Barcode Analysis Fragment</string>
+
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 

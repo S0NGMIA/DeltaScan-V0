@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/HomeFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -24,5 +24,80 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.deltascan.HomeFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_HomeFragment_to_ScanFragment"
+            app:destination="@id/ScanFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_PaintFragment"
+            app:destination="@id/PaintFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PaintFragment"
+        android:name="com.example.deltascan.PaintFragment"
+        android:label="@string/paint_fragment_label"
+        tools:layout="@layout/fragment_paint">
+        <action
+            android:id="@+id/action_PaintFragment_to_SettingsPaintFragment"
+            app:destination="@id/SettingsPaintFragment" />
+        <action
+            android:id="@+id/action_PaintFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
+        <action
+            android:id="@+id/action_PaintFragment_to_BarcodeAnalysisFragment"
+            app:destination="@id/BarcodeAnalysisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ScanFragment"
+        android:name="com.example.deltascan.ScanFragment"
+        android:label="@string/scan_fragment_label"
+        tools:layout="@layout/fragment_scan">
+        <action
+            android:id="@+id/action_ScanFragment_to_SettingsScanFragment"
+            app:destination="@id/SettingsScanFragment" />
+        <action
+            android:id="@+id/action_ScanFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
+        <action
+            android:id="@+id/action_ScanFragment_to_BarcodeAnalysisFragment"
+            app:destination="@id/BarcodeAnalysisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SettingsPaintFragment"
+        android:name="com.example.deltascan.SettingsPaintFragment"
+        android:label="@string/settings_paint_fragment_label"
+        tools:layout="@layout/fragment_settings_paint">
+        <action
+            android:id="@+id/action_SettingsPaintFragment_to_PaintFragment"
+            app:destination="@id/PaintFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SettingsScanFragment"
+        android:name="com.example.deltascan.SettingsScanFragment"
+        android:label="@string/settings_scan_fragment_label"
+        tools:layout="@layout/fragment_settings_scan">
+        <action
+            android:id="@+id/action_SettingsScanFragment_to_ScanFragment"
+            app:destination="@id/ScanFragment" />
+        <action
+            android:id="@+id/action_SettingsScanFragment_to_ScanFragment2"
+            app:destination="@id/ScanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/BarcodeAnalysisFragment"
+        android:name="com.example.deltascan.BarcodeAnalysisFragment"
+        android:label="@string/barcode_analysis_fragment_label"
+        tools:layout="@layout/fragment_barcode_analysis">
+        <action
+            android:id="@+id/action_BarcodeAnalysisFragment_to_ScanFragment"
+            app:destination="@id/ScanFragment" />
+        <action
+            android:id="@+id/action_BarcodeAnalysisFragment_to_PaintFragment"
+            app:destination="@id/PaintFragment" />
     </fragment>
 </navigation>
