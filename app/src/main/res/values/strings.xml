@@ -8,13 +8,19 @@
     <string name="settings_paint_fragment_label">Settings Paint Fragment</string>
     <string name="settings_scan_fragment_label">Settings Scan Fragment</string>
     <string name="barcode_analysis_fragment_label">Barcode Analysis Fragment</string>
-    <!-- Button Names -->
+    <!-- Labels -->
     <string name="paint">PAINT</string>
     <string name="scan">SCAN</string>
     <string name="home">HOME</string>
     <string name="back">BACK</string>
     <string name="settings">SETTINGS</string>
     <string name="analysis">ANALYSIS</string>
+    <string name="sound">SOUND</string>
+    <string name="timer">TIMER</string>
+    <string name="numScan"># TO SCAN</string>
+    <string name="appTitle">Delta Scan</string>
+    <string name="time">TIME: </string>
+    <string name="count">COUNT: </string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
