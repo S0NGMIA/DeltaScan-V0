@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.deltascan.databinding.FragmentScanBinding;
 import com.example.deltascan.databinding.FragmentSettingsPaintBinding;
 
 public class SettingsPaintFragment extends Fragment {
