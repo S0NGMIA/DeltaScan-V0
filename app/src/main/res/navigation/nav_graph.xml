@@ -31,6 +31,10 @@
         <action
             android:id="@+id/action_PaintFragment_to_BarcodeAnalysisFragment"
             app:destination="@id/BarcodeAnalysisFragment" />
+        <argument
+            android:name="maxScan"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/ScanFragment"
@@ -79,8 +83,5 @@
         <action
             android:id="@+id/action_BarcodeAnalysisFragment_to_PaintFragment"
             app:destination="@id/PaintFragment" />
-        <argument
-            android:name="previousFragment"
-            app:argType="string" />
     </fragment>
 </navigation>
