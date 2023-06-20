@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.deltascan.databinding.FragmentSettingsPaintBinding;
 import com.example.deltascan.databinding.FragmentSettingsScanBinding;
 
 public class SettingsScanFragment extends Fragment {
@@ -28,6 +27,9 @@ public class SettingsScanFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentSettingsScanBinding.inflate(inflater, container, false);
+        if(getArguments().getBoolean("timer")) {
+            binding.timer.setChecked(true);
+        }
         return binding.getRoot();
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -35,8 +37,10 @@ public class SettingsScanFragment extends Fragment {
         binding.backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle args = new Bundle();
+                args.putBoolean("timer", binding.timer.isChecked());
                 NavHostFragment.findNavController(SettingsScanFragment.this)
-                        .navigate(R.id.action_SettingsScanFragment_to_ScanFragment);
+                        .navigate(R.id.action_SettingsScanFragment_to_ScanFragment, args);
             }
         }); //SettingsScanFragment --> scanFragment
     }

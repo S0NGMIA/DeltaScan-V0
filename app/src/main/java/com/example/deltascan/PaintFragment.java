@@ -14,23 +14,48 @@ import com.example.deltascan.databinding.FragmentPaintBinding;
 
 public class PaintFragment extends Fragment {
     private FragmentPaintBinding binding;
+    private boolean timer;
+    private int countMax;
+
     public PaintFragment() {
-        // Required empty public constructor
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            timer = getArguments().getBoolean("timer", true);
+            countMax = getArguments().getInt("count", -1);
+        }
+        else{
+            timer = true;
+            countMax = -1;
+        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentPaintBinding.inflate(inflater, container, false);
+        if(timer){
+            binding.timer.setVisibility(View.VISIBLE);
+        }
+        else {
+            binding.timer.setVisibility(View.INVISIBLE);
+        }
+        if(countMax==-1){
+            binding.counter.setVisibility(View.INVISIBLE);
+        }
+        else{
+            binding.counter.setVisibility(View.VISIBLE);
+            binding.counter.setText("COUNT: 0/"+countMax);
+        }
         return binding.getRoot();
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         binding.homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,11 +66,13 @@ public class PaintFragment extends Fragment {
         binding.settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle args = new Bundle();
+                args.putBoolean("timer", timer);
+                args.putInt("counter", countMax);
                 NavHostFragment.findNavController(PaintFragment.this)
-                        .navigate(R.id.action_PaintFragment_to_SettingsPaintFragment);
+                        .navigate(R.id.action_PaintFragment_to_SettingsPaintFragment, args);
             }
         }); //PaintFragment --> SettingsPaintFragment
-
         binding.analysisButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

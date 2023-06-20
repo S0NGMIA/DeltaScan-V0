@@ -15,6 +15,7 @@ import com.example.deltascan.databinding.FragmentScanBinding;
 
 public class ScanFragment extends Fragment {
     private FragmentScanBinding binding;
+    private boolean timer;
     public ScanFragment() {
         // Required empty public constructor
     }
@@ -22,11 +23,23 @@ public class ScanFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            timer = getArguments().getBoolean("timer", true);
+        }
+        else{
+            timer = true;
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentScanBinding.inflate(inflater, container, false);
+        if(timer){
+            binding.timer.setVisibility(View.VISIBLE);
+        }
+        else {
+            binding.timer.setVisibility(View.INVISIBLE);
+        }
         return binding.getRoot();
     }
 
@@ -43,8 +56,10 @@ public class ScanFragment extends Fragment {
         binding.settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle args = new Bundle();
+                args.putBoolean("timer", timer);
                 NavHostFragment.findNavController(ScanFragment.this)
-                        .navigate(R.id.action_ScanFragment_to_SettingsScanFragment);
+                        .navigate(R.id.action_ScanFragment_to_SettingsScanFragment, args);
             }
         }); //ScanFragment --> SettingsScanFragment
 
