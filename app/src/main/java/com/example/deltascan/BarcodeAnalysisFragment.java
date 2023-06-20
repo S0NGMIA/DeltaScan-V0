@@ -9,9 +9,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import  com.example.deltascan.R;
 import com.example.deltascan.databinding.FragmentBarcodeAnalysisBinding;
-import com.example.deltascan.databinding.FragmentPaintBinding;
 
 public class BarcodeAnalysisFragment extends Fragment {
 

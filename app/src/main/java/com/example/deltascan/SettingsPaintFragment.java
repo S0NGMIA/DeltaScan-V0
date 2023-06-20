@@ -11,7 +11,7 @@ import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import  com.example.deltascan.R;
 import com.example.deltascan.databinding.FragmentSettingsPaintBinding;
 
 public class SettingsPaintFragment extends Fragment {

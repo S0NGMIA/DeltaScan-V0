@@ -13,5 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "DeltaScan"
-include ':app'/*, ':DataCollectionLib'
-project(':DataCollectionLib').projectDir = new File('libs/DataCollectionLib')*/
+include ':app', ':DataCollectionLib'
